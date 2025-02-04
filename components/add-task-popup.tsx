@@ -35,7 +35,7 @@ export function AddTaskPopup({ isOpen, onClose, onAddTask }: AddTaskPopupProps) 
       course,
       assignee: {
         name: 'Unassigned',
-        avatar: '/placeholder.svg'
+        avatar: '/avatar.svg'
       }
     }
     onAddTask(newTask)

@@ -40,29 +40,56 @@ const courses = [
 const continueWatching = [
   {
     title: "Advanced React Patterns",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/course.jpg",
     category: "Development",
     mentor: {
       name: "Jane Smith",
-      avatar: "/placeholder.svg",
+      avatar: "/avatar.svg",
     },
   },
   {
     title: "UX Research Techniques",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/course.jpg",
     category: "Design",
     mentor: {
       name: "Alex Johnson",
-      avatar: "/placeholder.svg",
+      avatar: "/avatar.svg",
     },
   },
   {
     title: "Machine Learning Basics",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/course.jpg",
     category: "Data Science",
     mentor: {
       name: "Maria Garcia",
-      avatar: "/placeholder.svg",
+      avatar: "/avatar.svg",
+    },
+  },
+  {
+    title: "Introduction to Python",
+    image: "/course.jpg",
+    category: "Development",
+    mentor: {
+      name: "John Doe",
+      avatar: "/avatar.svg",
+    },
+  },
+  {
+    title: "Advanced Node.js Concepts",
+    image: "/course.jpg",
+    category: "Development",
+    mentor: {
+      name: "Rita Wilson",
+      avatar: "/avatar.svg",
+    },
+  },
+  {
+    title: "UI/UX Design Principles",
+    image: "/course.jpg",
+    category: "Design",
+    mentor: {
+      name: "Maria Garcia",
+      avatar: "/avatar.svg",
     },
   },
 ]

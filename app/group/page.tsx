@@ -50,7 +50,7 @@ export default function GroupPage() {
       members: 8,
       category: "Design",
       lastActive: "2 hours ago",
-      image: "/placeholder.svg?height=100&width=200",
+      image: "/course.jpg",
     },
     {
       id: 2,
@@ -59,7 +59,7 @@ export default function GroupPage() {
       members: 12,
       category: "Programming",
       lastActive: "1 day ago",
-      image: "/placeholder.svg?height=100&width=200",
+      image: "/course.jpg",
     },
     {
       id: 3,
@@ -68,7 +68,7 @@ export default function GroupPage() {
       members: 15,
       category: "Data Science",
       lastActive: "3 hours ago",
-      image: "/placeholder.svg?height=100&width=200",
+      image: "/course.jpg",
     },
     {
       id: 4,
@@ -77,7 +77,7 @@ export default function GroupPage() {
       members: 10,
       category: "Web Development",
       lastActive: "5 hours ago",
-      image: "/placeholder.svg?height=100&width=200",
+      image: "/course.jpg",
     },
   ])
 

@@ -17,17 +17,17 @@ const mentors = [
   {
     name: "Padhang Satrio",
     role: "Mentor",
-    avatar: "/placeholder.svg",
+    avatar: "/avatar.svg",
   },
   {
     name: "Zakir Horizontal",
     role: "Mentor",
-    avatar: "/placeholder.svg",
+    avatar: "/avatar.svg",
   },
   {
     name: "Leonardo Samual",
     role: "Mentor",
-    avatar: "/placeholder.svg",
+    avatar: "/avatar.svg",
   },
 ]
 

@@ -39,7 +39,7 @@ export default function LessonPage() {
       description: "Learn the basics of user interface and user experience design",
       duration: "1:30:00",
       progress: 75,
-      image: "/placeholder.svg?height=100&width=200",
+      image: "/course.jpg",
       category: "Design",
     },
     {
@@ -48,7 +48,7 @@ export default function LessonPage() {
       description: "Understand how to use color effectively in your designs",
       duration: "0:45:00",
       progress: 50,
-      image: "/placeholder.svg?height=100&width=200",
+      image: "/course.jpg",
       category: "Design",
     },
     {
@@ -57,7 +57,7 @@ export default function LessonPage() {
       description: "Master the art of creating layouts that work on any device",
       duration: "2:00:00",
       progress: 25,
-      image: "/placeholder.svg?height=100&width=200",
+      image: "/course.jpg",
       category: "Development",
     },
     {
@@ -66,7 +66,7 @@ export default function LessonPage() {
       description: "Learn how to choose and pair fonts for optimal readability",
       duration: "1:00:00",
       progress: 0,
-      image: "/placeholder.svg?height=100&width=200",
+      image: "/course.jpg",
       category: "Design",
     },
     {
@@ -75,7 +75,7 @@ export default function LessonPage() {
       description: "Get started with the basics of JavaScript programming",
       duration: "3:00:00",
       progress: 10,
-      image: "/placeholder.svg?height=100&width=200",
+      image: "/course.jpg",
       category: "Development",
     },
     {
@@ -84,7 +84,7 @@ export default function LessonPage() {
       description: "Learn the core concepts of React.js for building modern web applications",
       duration: "4:00:00",
       progress: 5,
-      image: "/placeholder.svg?height=100&width=200",
+      image: "/course.jpg",
       category: "Development",
     },
   ])

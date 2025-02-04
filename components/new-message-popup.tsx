@@ -27,7 +27,7 @@ export function NewMessagePopup({ isOpen, onClose, onSendMessage }: NewMessagePo
     const newMessage = {
       id: Date.now(),
       sender: "You",
-      avatar: "/placeholder.svg",
+      avatar: "/avatar.svg",
       subject,
       preview: content.slice(0, 50) + (content.length > 50 ? '...' : ''),
       date: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),

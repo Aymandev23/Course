@@ -51,7 +51,7 @@ export function Header() {
           className="flex items-center gap-2"
         >
           <Avatar>
-            <AvatarImage src="/placeholder.svg" />
+            <AvatarImage src="/avatar.svg" />
             <AvatarFallback>JR</AvatarFallback>
           </Avatar>
           <span className="text-sm font-medium hidden sm:inline">Jason Ranti</span>

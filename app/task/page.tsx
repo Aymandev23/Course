@@ -51,7 +51,7 @@ export default function TaskPage() {
       course: "UI/UX Design",
       assignee: {
         name: "Alex Johnson",
-        avatar: "/placeholder.svg",
+        avatar: "/avatar.svg",
       },
     },
     {
@@ -64,7 +64,7 @@ export default function TaskPage() {
       course: "Advanced JavaScript",
       assignee: {
         name: "Emma Watson",
-        avatar: "/placeholder.svg",
+        avatar: "/avatar.svg",
       },
     },
     {
@@ -77,7 +77,7 @@ export default function TaskPage() {
       course: "React Masterclass",
       assignee: {
         name: "John Doe",
-        avatar: "/placeholder.svg",
+        avatar: "/avatar.svg",
       },
     },
     {
@@ -90,7 +90,7 @@ export default function TaskPage() {
       course: "Database Management",
       assignee: {
         name: "Sarah Smith",
-        avatar: "/placeholder.svg",
+        avatar: "/avatar.svg",
       },
     },
   ])

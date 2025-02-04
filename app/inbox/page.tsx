@@ -34,7 +34,7 @@ const initialMessages: Message[] = [
   {
     id: 1,
     sender: "John Doe",
-    avatar: "/placeholder.svg",
+    avatar: "/avatar.svg",
     subject: "Course Update: New UI/UX Design Lessons Available",
     preview: "We've just added new lessons to the UI/UX Design course. Check them out!",
     date: "10:30 AM",
@@ -45,7 +45,7 @@ const initialMessages: Message[] = [
   {
     id: 2,
     sender: "Jane Smith",
-    avatar: "/placeholder.svg",
+    avatar: "/avatar.svg",
     subject: "Reminder: Upcoming Live Session on Frontend Development",
     preview: "Don't forget about our live coding session tomorrow at 2 PM. Be sure to bring your questions!",
     date: "Yesterday",
@@ -56,7 +56,7 @@ const initialMessages: Message[] = [
   {
     id: 3,
     sender: "Course Support",
-    avatar: "/placeholder.svg",
+    avatar: "/avatar.svg",
     subject: "Your Recent Course Progress",
     preview: "Great job on completing the JavaScript Basics module! Here's what's next on your learning path.",
     date: "2 days ago",
@@ -67,7 +67,7 @@ const initialMessages: Message[] = [
   {
     id: 4,
     sender: "Alex Johnson",
-    avatar: "/placeholder.svg",
+    avatar: "/avatar.svg",
     subject: "Feedback on Your Latest Project",
     preview: "I've reviewed your project submission. Here are some thoughts and suggestions for improvement.",
     date: "3 days ago",
@@ -78,7 +78,7 @@ const initialMessages: Message[] = [
   {
     id: 5,
     sender: "Career Services",
-    avatar: "/placeholder.svg",
+    avatar: "/avatar.svg",
     subject: "New Job Opportunities for Coursue Graduates",
     preview: "Check out these exciting job openings that match your skill set and course completion.",
     date: "1 week ago",

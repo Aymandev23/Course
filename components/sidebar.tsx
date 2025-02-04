@@ -20,9 +20,9 @@ const menuItems = [
 ]
 
 const friends = [
-  { name: "Bagas Mahple", status: "Friend", avatar: "/placeholder.svg" },
-  { name: "Sir Dandy", status: "Old Friend", avatar: "/placeholder.svg" },
-  { name: "Jhon Tosan", status: "Friend", avatar: "/placeholder.svg" },
+  { name: "Bagas Mahple", status: "Friend", avatar: "/avatar.svg" },
+  { name: "Sir Dandy", status: "Old Friend", avatar: "/avatar.svg" },
+  { name: "Jhon Tosan", status: "Friend", avatar: "/avatar.svg" },
 ]
 
 export function Sidebar() {

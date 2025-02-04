@@ -86,7 +86,7 @@ export default function SettingsPage() {
                       <div className="space-y-4">
                         <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
                           <Avatar className="h-20 w-20">
-                            <AvatarImage src="/placeholder.svg" />
+                            <AvatarImage src="/avatar.svg" />
                             <AvatarFallback>JD</AvatarFallback>
                           </Avatar>
                           <Button>Change Avatar</Button>
