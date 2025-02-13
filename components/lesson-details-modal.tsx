@@ -1,6 +1,5 @@
-import { useState } from 'react'
-import { motion } from "framer-motion"
-import { X, Play, Pause, RotateCcw, Clock } from 'lucide-react'
+import { useState } from "react"
+import { Play, Pause, RotateCcw, Clock } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
@@ -29,7 +28,7 @@ export function LessonDetailsModal({ isOpen, onClose, lesson, onUpdateLesson }: 
   }
 
   const handleProgressChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const newTime = parseFloat(event.target.value)
+    const newTime = Number.parseFloat(event.target.value)
     setCurrentTime(newTime)
     // In a real application, this would seek the video to the new time
   }
@@ -37,7 +36,7 @@ export function LessonDetailsModal({ isOpen, onClose, lesson, onUpdateLesson }: 
   const formatTime = (time: number) => {
     const minutes = Math.floor(time / 60)
     const seconds = Math.floor(time % 60)
-    return `${minutes}:${seconds.toString().padStart(2, '0')}`
+    return `${minutes}:${seconds.toString().padStart(2, "0")}`
   }
 
   return (
@@ -48,11 +47,7 @@ export function LessonDetailsModal({ isOpen, onClose, lesson, onUpdateLesson }: 
         </DialogHeader>
         <div className="mt-4">
           <div className="aspect-video bg-gray-200 rounded-lg relative">
-            <img
-              src={lesson.image}
-              alt={lesson.title}
-              className="w-full h-full object-cover rounded-lg"
-            />
+            <img src={lesson.image} alt={lesson.title} className="w-full h-full object-cover rounded-lg" />
             <div className="absolute inset-0 flex items-center justify-center">
               <Button size="lg" className="rounded-full" onClick={handlePlayPause}>
                 {isPlaying ? <Pause className="h-6 w-6" /> : <Play className="h-6 w-6" />}
@@ -71,7 +66,9 @@ export function LessonDetailsModal({ isOpen, onClose, lesson, onUpdateLesson }: 
               </div>
               <div className="flex items-center space-x-2">
                 <Clock className="h-4 w-4" />
-                <span className="text-sm">{formatTime(currentTime)} / {lesson.duration}</span>
+                <span className="text-sm">
+                  {formatTime(currentTime)} / {lesson.duration}
+                </span>
               </div>
             </div>
             <input

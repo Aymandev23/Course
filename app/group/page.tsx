@@ -1,14 +1,13 @@
 "use client"
 
-import { useState } from 'react'
+import { useState } from "react"
 import { motion } from "framer-motion"
-import { Search, Filter, Plus, Users, MessageSquare, Calendar, MoreHorizontal, Menu } from 'lucide-react'
+import { Search, Filter, Plus, Users, MessageSquare, Calendar, MoreHorizontal, Menu } from "lucide-react"
 
 import { Header } from "@/components/header"
 import { Sidebar } from "@/components/sidebar"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Badge } from "@/components/ui/badge"
@@ -50,7 +49,7 @@ export default function GroupPage() {
       members: 8,
       category: "Design",
       lastActive: "2 hours ago",
-      image: "/course.jpg",
+      image: "/placeholder.svg?height=100&width=200",
     },
     {
       id: 2,
@@ -59,7 +58,7 @@ export default function GroupPage() {
       members: 12,
       category: "Programming",
       lastActive: "1 day ago",
-      image: "/course.jpg",
+      image: "/placeholder.svg?height=100&width=200",
     },
     {
       id: 3,
@@ -68,7 +67,7 @@ export default function GroupPage() {
       members: 15,
       category: "Data Science",
       lastActive: "3 hours ago",
-      image: "/course.jpg",
+      image: "/placeholder.svg?height=100&width=200",
     },
     {
       id: 4,
@@ -77,18 +76,18 @@ export default function GroupPage() {
       members: 10,
       category: "Web Development",
       lastActive: "5 hours ago",
-      image: "/course.jpg",
+      image: "/placeholder.svg?height=100&width=200",
     },
   ])
 
-  const filteredGroups = groups.filter(group => {
+  const filteredGroups = groups.filter((group) => {
     if (selectedTab === "all") return true
     return group.category.toLowerCase() === selectedTab.toLowerCase()
   })
 
   const handleAddGroup = (newGroup: any) => {
     // Here you would typically send this data to your backend
-    console.log('New group:', newGroup)
+    console.log("New group:", newGroup)
     // For now, let's just add it to our groups array
     const groupWithId = { ...newGroup, id: groups.length + 1 }
     setGroups([...groups, groupWithId])
@@ -112,11 +111,7 @@ export default function GroupPage() {
       <div className="flex flex-1 flex-col overflow-auto">
         <Header />
         <main className="flex-1 p-4 lg:p-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
               <h1 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-0">Groups</h1>
               <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-2 w-full sm:w-auto">
@@ -140,10 +135,18 @@ export default function GroupPage() {
               <div className="lg:col-span-2">
                 <Tabs defaultValue="all" className="space-y-4">
                   <TabsList className="flex flex-wrap">
-                    <TabsTrigger value="all" onClick={() => setSelectedTab("all")}>All Groups</TabsTrigger>
-                    <TabsTrigger value="design" onClick={() => setSelectedTab("design")}>Design</TabsTrigger>
-                    <TabsTrigger value="programming" onClick={() => setSelectedTab("programming")}>Programming</TabsTrigger>
-                    <TabsTrigger value="data science" onClick={() => setSelectedTab("data science")}>Data Science</TabsTrigger>
+                    <TabsTrigger value="all" onClick={() => setSelectedTab("all")}>
+                      All Groups
+                    </TabsTrigger>
+                    <TabsTrigger value="design" onClick={() => setSelectedTab("design")}>
+                      Design
+                    </TabsTrigger>
+                    <TabsTrigger value="programming" onClick={() => setSelectedTab("programming")}>
+                      Programming
+                    </TabsTrigger>
+                    <TabsTrigger value="data science" onClick={() => setSelectedTab("data science")}>
+                      Data Science
+                    </TabsTrigger>
                   </TabsList>
                   <TabsContent value="all" className="space-y-4">
                     {filteredGroups.map((group) => (
@@ -210,11 +213,7 @@ export default function GroupPage() {
 
 function GroupCard({ group }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3 }}
-    >
+    <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
       <Card>
         <CardHeader className="flex flex-col sm:flex-row items-start sm:items-center justify-between space-y-2 sm:space-y-0 pb-2">
           <div className="flex items-center space-x-4">

@@ -1,8 +1,8 @@
 "use client"
 
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { X, Upload } from 'lucide-react'
+import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import { X, Upload } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -16,8 +16,8 @@ interface AddCoursePopupProps {
 }
 
 export function AddCoursePopup({ isOpen, onClose, onAddCourse }: AddCoursePopupProps) {
-  const [title, setTitle] = useState('')
-  const [description, setDescription] = useState('')
+  const [title, setTitle] = useState("")
+  const [description, setDescription] = useState("")
   const [image, setImage] = useState<File | null>(null)
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -80,11 +80,7 @@ export function AddCoursePopup({ isOpen, onClose, onAddCourse }: AddCoursePopupP
                     accept="image/*"
                     className="hidden"
                   />
-                  <Button
-                    type="button"
-                    variant="outline"
-                    onClick={() => document.getElementById('image')?.click()}
-                  >
+                  <Button type="button" variant="outline" onClick={() => document.getElementById("image")?.click()}>
                     <Upload className="h-4 w-4 mr-2" />
                     Upload Image
                   </Button>

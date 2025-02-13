@@ -1,8 +1,8 @@
 "use client"
 
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { X, Upload } from 'lucide-react'
+import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import { X, Upload } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -17,19 +17,19 @@ interface AddGroupPopupProps {
 }
 
 export function AddGroupPopup({ isOpen, onClose, onAddGroup }: AddGroupPopupProps) {
-  const [name, setName] = useState('')
-  const [description, setDescription] = useState('')
-  const [category, setCategory] = useState('')
+  const [name, setName] = useState("")
+  const [description, setDescription] = useState("")
+  const [category, setCategory] = useState("")
   const [image, setImage] = useState<File | null>(null)
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    onAddGroup({ name, description, category, image, members: 0, lastActive: 'Just now' })
+    onAddGroup({ name, description, category, image, members: 0, lastActive: "Just now" })
     onClose()
     // Reset form
-    setName('')
-    setDescription('')
-    setCategory('')
+    setName("")
+    setDescription("")
+    setCategory("")
     setImage(null)
   }
 
@@ -101,11 +101,7 @@ export function AddGroupPopup({ isOpen, onClose, onAddGroup }: AddGroupPopupProp
                     accept="image/*"
                     className="hidden"
                   />
-                  <Button
-                    type="button"
-                    variant="outline"
-                    onClick={() => document.getElementById('image')?.click()}
-                  >
+                  <Button type="button" variant="outline" onClick={() => document.getElementById("image")?.click()}>
                     <Upload className="h-4 w-4 mr-2" />
                     Upload Image
                   </Button>

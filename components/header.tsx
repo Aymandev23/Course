@@ -1,6 +1,6 @@
 "use client"
 
-import { Bell, Mail } from 'lucide-react'
+import { Bell, Mail } from "lucide-react"
 import { motion } from "framer-motion"
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
@@ -12,11 +12,7 @@ export function Header() {
   return (
     <header className="flex items-center justify-between border-b bg-white p-4">
       <div className="relative w-full max-w-[500px]">
-        <Input
-          type="search"
-          placeholder="Search your course..."
-          className="w-full rounded-full bg-gray-50 pl-12"
-        />
+        <Input type="search" placeholder="Search your course..." className="w-full rounded-full bg-gray-50 pl-12" />
         <svg
           className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500"
           fill="none"
@@ -45,13 +41,9 @@ export function Header() {
           </Button>
         </motion.div>
         <Separator orientation="vertical" className="h-6 hidden sm:block" />
-        <motion.div
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="flex items-center gap-2"
-        >
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex items-center gap-2">
           <Avatar>
-            <AvatarImage src="/avatar.svg" />
+            <AvatarImage src="/placeholder.svg" />
             <AvatarFallback>JR</AvatarFallback>
           </Avatar>
           <span className="text-sm font-medium hidden sm:inline">Jason Ranti</span>

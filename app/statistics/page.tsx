@@ -1,15 +1,15 @@
 "use client"
 
-import { useState } from 'react'
+import { useState } from "react"
 import { motion } from "framer-motion"
-import { BarChart, DollarSign, Users, BookOpen, TrendingUp, ArrowUpRight, ArrowDownRight, Menu } from 'lucide-react'
+import { DollarSign, Users, BookOpen, TrendingUp, ArrowUpRight, ArrowDownRight, Menu } from "lucide-react"
 
 import { Header } from "@/components/header"
 import { Sidebar } from "@/components/sidebar"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Progress } from "@/components/ui/progress"
 
 // Placeholder function for chart data
@@ -106,15 +106,19 @@ export default function StatisticsPage() {
               {stats.map((stat, index) => (
                 <Card key={index}>
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                    <CardTitle className="text-sm font-medium">
-                      {stat.title}
-                    </CardTitle>
+                    <CardTitle className="text-sm font-medium">{stat.title}</CardTitle>
                     <stat.icon className="h-4 w-4 text-muted-foreground" />
                   </CardHeader>
                   <CardContent>
                     <div className="text-2xl font-bold">{stat.value}</div>
-                    <p className={`text-xs ${stat.trend === 'up' ? 'text-green-500' : 'text-red-500'} flex items-center`}>
-                      {stat.trend === 'up' ? <ArrowUpRight className="h-4 w-4 mr-1" /> : <ArrowDownRight className="h-4 w-4 mr-1" />}
+                    <p
+                      className={`text-xs ${stat.trend === "up" ? "text-green-500" : "text-red-500"} flex items-center`}
+                    >
+                      {stat.trend === "up" ? (
+                        <ArrowUpRight className="h-4 w-4 mr-1" />
+                      ) : (
+                        <ArrowDownRight className="h-4 w-4 mr-1" />
+                      )}
                       {stat.change}
                     </p>
                   </CardContent>
@@ -157,13 +161,9 @@ export default function StatisticsPage() {
                       <div key={index} className="flex items-center">
                         <div className="flex-1 space-y-1">
                           <p className="text-sm font-medium leading-none">{course.name}</p>
-                          <p className="text-sm text-muted-foreground">
-                            {course.students} students
-                          </p>
+                          <p className="text-sm text-muted-foreground">{course.students} students</p>
                         </div>
-                        <div className="text-sm font-medium">
-                          ${course.revenue.toLocaleString()}
-                        </div>
+                        <div className="text-sm font-medium">${course.revenue.toLocaleString()}</div>
                       </div>
                     ))}
                   </div>

@@ -64,13 +64,7 @@ export function PerformanceChart() {
       <CardContent className="pl-2">
         <ResponsiveContainer width="100%" height={350}>
           <BarChart data={data}>
-            <XAxis
-              dataKey="name"
-              stroke="#888888"
-              fontSize={12}
-              tickLine={false}
-              axisLine={false}
-            />
+            <XAxis dataKey="name" stroke="#888888" fontSize={12} tickLine={false} axisLine={false} />
             <YAxis
               stroke="#888888"
               fontSize={12}

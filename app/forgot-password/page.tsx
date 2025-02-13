@@ -1,8 +1,8 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Send } from 'lucide-react'
-import Link from 'next/link'
+import { Send } from "lucide-react"
+import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -13,7 +13,7 @@ export default function ForgotPasswordPage() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     // Handle forgot password logic here
-    console.log('Forgot password submitted')
+    console.log("Forgot password submitted")
   }
 
   return (
