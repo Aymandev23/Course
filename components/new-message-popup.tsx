@@ -1,8 +1,8 @@
 "use client"
 
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { X, Send } from "lucide-react"
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { X, Send } from 'lucide-react'
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -17,10 +17,10 @@ interface NewMessagePopupProps {
 }
 
 export function NewMessagePopup({ isOpen, onClose, onSendMessage }: NewMessagePopupProps) {
-  const [recipient, setRecipient] = useState("")
-  const [subject, setSubject] = useState("")
-  const [content, setContent] = useState("")
-  const [category, setCategory] = useState("")
+  const [recipient, setRecipient] = useState('')
+  const [subject, setSubject] = useState('')
+  const [content, setContent] = useState('')
+  const [category, setCategory] = useState('')
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -29,8 +29,8 @@ export function NewMessagePopup({ isOpen, onClose, onSendMessage }: NewMessagePo
       sender: "You",
       avatar: "/placeholder.svg",
       subject,
-      preview: content.slice(0, 50) + (content.length > 50 ? "..." : ""),
-      date: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+      preview: content.slice(0, 50) + (content.length > 50 ? '...' : ''),
+      date: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       isStarred: false,
       isRead: true,
       category,
@@ -38,10 +38,10 @@ export function NewMessagePopup({ isOpen, onClose, onSendMessage }: NewMessagePo
     onSendMessage(newMessage)
     onClose()
     // Reset form
-    setRecipient("")
-    setSubject("")
-    setContent("")
-    setCategory("")
+    setRecipient('')
+    setSubject('')
+    setContent('')
+    setCategory('')
   }
 
   return (

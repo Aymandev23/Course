@@ -1,8 +1,8 @@
 "use client"
 
-import { useState } from "react"
+import { useState } from 'react'
 import { motion } from "framer-motion"
-import { User, Bell, Lock, Palette, Globe, CreditCard, HelpCircle, LogOut, Menu } from "lucide-react"
+import { User, Bell, Lock, Palette, Globe, CreditCard, HelpCircle, LogOut, Menu } from 'lucide-react'
 
 import { Header } from "@/components/header"
 import { Sidebar } from "@/components/sidebar"
@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Tabs, TabsContent } from "@/components/ui/tabs"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Label } from "@/components/ui/label"
 import { Switch } from "@/components/ui/switch"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
@@ -47,7 +47,11 @@ export default function SettingsPage() {
       <div className="flex flex-1 flex-col overflow-auto">
         <Header />
         <main className="flex-1 p-4 lg:p-8">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             <h1 className="text-3xl font-bold mb-6">Settings</h1>
             <div className="flex flex-col lg:flex-row gap-6">
               <Card className="w-full lg:w-64 h-fit">
@@ -73,7 +77,7 @@ export default function SettingsPage() {
               </Card>
               <Card className="flex-1">
                 <CardHeader>
-                  <CardTitle>{settingsTabs.find((tab) => tab.value === activeTab)?.label}</CardTitle>
+                  <CardTitle>{settingsTabs.find(tab => tab.value === activeTab)?.label}</CardTitle>
                   <CardDescription>Manage your {activeTab} settings and preferences.</CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -136,9 +140,7 @@ export default function SettingsPage() {
                         <div className="flex items-center justify-between">
                           <div className="space-y-0.5">
                             <Label>Two-Factor Authentication</Label>
-                            <p className="text-sm text-muted-foreground">
-                              Add an extra layer of security to your account.
-                            </p>
+                            <p className="text-sm text-muted-foreground">Add an extra layer of security to your account.</p>
                           </div>
                           <Switch />
                         </div>

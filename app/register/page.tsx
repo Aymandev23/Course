@@ -27,9 +27,9 @@ export default function RegisterPage() {
       await signUp(email, password)
       toast({
         title: "Registration successful",
-        description: "Welcome! You've been automatically logged in.",
+        description: "Please check your email to confirm your account.",
       })
-      router.push("/")
+      router.push("/login")
     } catch (error) {
       toast({
         title: "Registration failed",

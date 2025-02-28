@@ -1,8 +1,8 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { ContinueWatchingCard } from "@/components/continue-watching"
 
@@ -34,17 +34,19 @@ export function AnimatedSlider({ items }: AnimatedSliderProps) {
     }
 
     handleResize()
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
   }, [])
 
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + itemsPerPage >= items.length ? 0 : prevIndex + itemsPerPage))
+    setCurrentIndex((prevIndex) =>
+      prevIndex + itemsPerPage >= items.length ? 0 : prevIndex + itemsPerPage
+    )
   }
 
   const prevSlide = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex - itemsPerPage < 0 ? Math.max(items.length - itemsPerPage, 0) : prevIndex - itemsPerPage,
+      prevIndex - itemsPerPage < 0 ? Math.max(items.length - itemsPerPage, 0) : prevIndex - itemsPerPage
     )
   }
 

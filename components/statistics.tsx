@@ -1,6 +1,6 @@
 "use client"
 
-import { MoreVertical, ArrowUp, ArrowDown } from "lucide-react"
+import { MoreVertical, Plus, ArrowUp, ArrowDown } from 'lucide-react'
 import { motion } from "framer-motion"
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
@@ -140,10 +140,16 @@ export function Statistics() {
                 <div className="flex items-center" key={course.name}>
                   <div className="flex-1 space-y-1">
                     <p className="text-sm font-medium leading-none">{course.name}</p>
-                    <p className="text-sm text-muted-foreground">{course.enrollments} enrollments</p>
+                    <p className="text-sm text-muted-foreground">
+                      {course.enrollments} enrollments
+                    </p>
                   </div>
                   <div className={`flex items-center ${course.change >= 0 ? "text-green-500" : "text-red-500"}`}>
-                    {course.change >= 0 ? <ArrowUp className="h-4 w-4 mr-1" /> : <ArrowDown className="h-4 w-4 mr-1" />}
+                    {course.change >= 0 ? (
+                      <ArrowUp className="h-4 w-4 mr-1" />
+                    ) : (
+                      <ArrowDown className="h-4 w-4 mr-1" />
+                    )}
                     <span className="text-sm font-medium">{Math.abs(course.change)}%</span>
                   </div>
                 </div>
@@ -154,7 +160,9 @@ export function Statistics() {
         <Card className="col-span-3">
           <CardHeader>
             <CardTitle>Recent Activity</CardTitle>
-            <CardDescription>Your progress over the last 30 days</CardDescription>
+            <CardDescription>
+              Your progress over the last 30 days
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="flex h-[200px] items-end gap-2">
@@ -167,7 +175,9 @@ export function Statistics() {
                     animate={{ height: `${item.value}%` }}
                     transition={{ delay: index * 0.1 }}
                   />
-                  <span className="text-center text-xs text-muted-foreground mt-2 block">{item.date}</span>
+                  <span className="text-center text-xs text-muted-foreground mt-2 block">
+                    {item.date}
+                  </span>
                 </div>
               ))}
             </div>

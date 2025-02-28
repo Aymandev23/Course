@@ -1,4 +1,6 @@
-import { useState } from "react"
+import { useState } from 'react'
+import { motion } from "framer-motion"
+import { X, Calendar, Clock } from 'lucide-react'
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -53,7 +55,7 @@ export function TaskDetailsModal({ isOpen, onClose, task, onUpdateTask }: TaskDe
             <Label htmlFor="dueDate">Due Date</Label>
             <DatePicker
               date={editedTask.dueDate ? new Date(editedTask.dueDate) : undefined}
-              setDate={(date) => setEditedTask({ ...editedTask, dueDate: date?.toISOString().split("T")[0] })}
+              setDate={(date) => setEditedTask({ ...editedTask, dueDate: date?.toISOString().split('T')[0] })}
             />
           </div>
           <div>

@@ -1,8 +1,8 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect } from 'react'
 import { motion } from "framer-motion"
-import { Search, Star, Trash2, Archive, ChevronDown, MoreHorizontal, Menu, Plus, RefreshCcw } from "lucide-react"
+import { Search, Filter, Star, Trash2, Archive, ChevronDown, MoreHorizontal, Menu, Plus, RefreshCcw } from 'lucide-react'
 
 import { Header } from "@/components/header"
 import { Sidebar } from "@/components/sidebar"
@@ -40,7 +40,7 @@ const initialMessages: Message[] = [
     date: "10:30 AM",
     isStarred: false,
     isRead: false,
-    category: "Updates",
+    category: "Updates"
   },
   {
     id: 2,
@@ -51,7 +51,7 @@ const initialMessages: Message[] = [
     date: "Yesterday",
     isStarred: true,
     isRead: true,
-    category: "Reminders",
+    category: "Reminders"
   },
   {
     id: 3,
@@ -62,7 +62,7 @@ const initialMessages: Message[] = [
     date: "2 days ago",
     isStarred: false,
     isRead: true,
-    category: "Progress",
+    category: "Progress"
   },
   {
     id: 4,
@@ -73,7 +73,7 @@ const initialMessages: Message[] = [
     date: "3 days ago",
     isStarred: false,
     isRead: true,
-    category: "Feedback",
+    category: "Feedback"
   },
   {
     id: 5,
@@ -84,7 +84,7 @@ const initialMessages: Message[] = [
     date: "1 week ago",
     isStarred: true,
     isRead: true,
-    category: "Opportunities",
+    category: "Opportunities"
   },
 ]
 
@@ -96,7 +96,9 @@ export default function InboxPage() {
   const [filterCategory, setFilterCategory] = useState("all")
 
   const toggleMessageSelection = (id: number) => {
-    setSelectedMessages((prev) => (prev.includes(id) ? prev.filter((messageId) => messageId !== id) : [...prev, id]))
+    setSelectedMessages(prev => 
+      prev.includes(id) ? prev.filter(messageId => messageId !== id) : [...prev, id]
+    )
   }
 
   const handleAddMessage = (newMessage: Message) => {
@@ -104,34 +106,35 @@ export default function InboxPage() {
   }
 
   const toggleStar = (id: number) => {
-    setMessages(
-      messages.map((message) => (message.id === id ? { ...message, isStarred: !message.isStarred } : message)),
-    )
+    setMessages(messages.map(message => 
+      message.id === id ? { ...message, isStarred: !message.isStarred } : message
+    ))
   }
 
   const markAsRead = (id: number) => {
-    setMessages(messages.map((message) => (message.id === id ? { ...message, isRead: true } : message)))
+    setMessages(messages.map(message => 
+      message.id === id ? { ...message, isRead: true } : message
+    ))
   }
 
   const deleteMessages = () => {
-    setMessages(messages.filter((message) => !selectedMessages.includes(message.id)))
+    setMessages(messages.filter(message => !selectedMessages.includes(message.id)))
     setSelectedMessages([])
   }
 
   const archiveMessages = () => {
     // In a real application, you would move these to an archive
     // For now, we'll just mark them as read
-    setMessages(
-      messages.map((message) => (selectedMessages.includes(message.id) ? { ...message, isRead: true } : message)),
-    )
+    setMessages(messages.map(message => 
+      selectedMessages.includes(message.id) ? { ...message, isRead: true } : message
+    ))
     setSelectedMessages([])
   }
 
   // Filter and search messages
-  const filteredMessages = messages.filter((message) => {
-    const matchesSearch =
-      message.subject.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      message.sender.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredMessages = messages.filter(message => {
+    const matchesSearch = message.subject.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                          message.sender.toLowerCase().includes(searchTerm.toLowerCase())
     const matchesCategory = filterCategory === "all" || message.category === filterCategory
     return matchesSearch && matchesCategory
   })
@@ -148,9 +151,9 @@ export default function InboxPage() {
         date: new Date().toLocaleTimeString(),
         isStarred: false,
         isRead: false,
-        category: "Notifications",
+        category: "Notifications"
       }
-      setMessages((prev) => [newMessage, ...prev])
+      setMessages(prev => [newMessage, ...prev])
     }, 30000) // New message every 30 seconds
 
     return () => clearInterval(timer)
@@ -171,22 +174,22 @@ export default function InboxPage() {
       <div className="hidden lg:block">
         <Sidebar />
       </div>
-      <div className="flex flex-1 flex-col overflow-auto">
-        {" "}
-        {/* Updated main content div */}
+      <div className="flex flex-1 flex-col overflow-auto"> {/* Updated main content div */}
         <Header />
-        <main className="flex-1 p-4 lg:p-8">
-          {" "}
-          {/* Updated <main> tag */}
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+        <main className="flex-1 p-4 lg:p-8"> {/* Updated <main> tag */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
               <h1 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-0">Inbox</h1>
               <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-2 w-full sm:w-auto">
                 <div className="relative w-full sm:w-auto">
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
-                  <Input
-                    className="pl-10 w-full"
-                    placeholder="Search messages"
+                  <Input 
+                    className="pl-10 w-full" 
+                    placeholder="Search messages" 
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                   />
@@ -215,11 +218,11 @@ export default function InboxPage() {
             <div className="bg-white rounded-lg shadow">
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 border-b">
                 <div className="flex items-center space-x-2 mb-2 sm:mb-0">
-                  <Checkbox
+                  <Checkbox 
                     checked={selectedMessages.length === filteredMessages.length}
                     onCheckedChange={(checked) => {
                       if (checked) {
-                        setSelectedMessages(filteredMessages.map((m) => m.id))
+                        setSelectedMessages(filteredMessages.map(m => m.id))
                       } else {
                         setSelectedMessages([])
                       }
@@ -256,7 +259,9 @@ export default function InboxPage() {
                   </TooltipProvider>
                 </div>
                 <div className="flex items-center space-x-2 w-full sm:w-auto">
-                  <span className="text-sm text-gray-500">{filteredMessages.length} messages</span>
+                  <span className="text-sm text-gray-500">
+                    {filteredMessages.length} messages
+                  </span>
                   <Button variant="ghost" size="icon" onClick={() => setMessages(initialMessages)}>
                     <RefreshCcw className="h-4 w-4" />
                   </Button>
@@ -270,11 +275,11 @@ export default function InboxPage() {
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.3 }}
                     className={`flex items-center p-3 sm:p-4 hover:bg-gray-50 ${
-                      !message.isRead ? "bg-blue-50" : ""
-                    } ${selectedMessages.includes(message.id) ? "bg-blue-100" : ""}`}
+                      !message.isRead ? 'bg-blue-50' : ''
+                    } ${selectedMessages.includes(message.id) ? 'bg-blue-100' : ''}`}
                     onClick={() => markAsRead(message.id)}
                   >
-                    <Checkbox
+                    <Checkbox 
                       checked={selectedMessages.includes(message.id)}
                       onCheckedChange={() => toggleMessageSelection(message.id)}
                       onClick={(e) => e.stopPropagation()}
@@ -286,22 +291,20 @@ export default function InboxPage() {
                     </Avatar>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between">
-                        <p className={`text-sm font-semibold truncate ${!message.isRead ? "text-blue-600" : ""}`}>
+                        <p className={`text-sm font-semibold truncate ${!message.isRead ? 'text-blue-600' : ''}`}>
                           {message.sender}
                         </p>
                         <span className="text-xs text-gray-500 ml-2">{message.date}</span>
                       </div>
-                      <p className={`text-sm truncate ${!message.isRead ? "font-semibold" : ""}`}>{message.subject}</p>
+                      <p className={`text-sm truncate ${!message.isRead ? 'font-semibold' : ''}`}>{message.subject}</p>
                       <p className="text-xs text-gray-500 truncate hidden sm:block">{message.preview}</p>
                     </div>
                     <div className="ml-2 sm:ml-4 flex items-center">
-                      <Badge variant="outline" className="mr-2">
-                        {message.category}
-                      </Badge>
-                      <Button
-                        variant="ghost"
-                        size="icon"
-                        className={message.isStarred ? "text-yellow-400" : ""}
+                      <Badge variant="outline" className="mr-2">{message.category}</Badge>
+                      <Button 
+                        variant="ghost" 
+                        size="icon" 
+                        className={message.isStarred ? 'text-yellow-400' : ''}
                         onClick={(e) => {
                           e.stopPropagation()
                           toggleStar(message.id)

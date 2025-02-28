@@ -1,9 +1,9 @@
 "use client"
 
-import { useState } from "react"
+import { useState } from 'react'
 import { motion } from "framer-motion"
-import { LogOut } from "lucide-react"
-import { useRouter } from "next/navigation"
+import { LogOut } from 'lucide-react'
+import { useRouter } from 'next/navigation'
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
@@ -25,8 +25,8 @@ export default function LogoutPage() {
 
   const handleLogout = () => {
     // Handle logout logic here
-    console.log("Logged out")
-    router.push("/login")
+    console.log('Logged out')
+    router.push('/login')
   }
 
   return (
@@ -58,8 +58,7 @@ export default function LogoutPage() {
                 <AlertDialogHeader>
                   <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
                   <AlertDialogDescription>
-                    This action will log you out of your account. You will need to log in again to access your
-                    dashboard.
+                    This action will log you out of your account. You will need to log in again to access your dashboard.
                   </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>

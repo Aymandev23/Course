@@ -1,11 +1,15 @@
 "use client"
 
-import { Heart, MoreVertical } from "lucide-react"
+import { Heart, MoreVertical } from 'lucide-react'
 import { motion } from "framer-motion"
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader } from "@/components/ui/card"
+import {
+  Card,
+  CardContent,
+  CardHeader,
+} from "@/components/ui/card"
 
 interface ContinueWatchingProps {
   title: string
@@ -17,16 +21,32 @@ interface ContinueWatchingProps {
   }
 }
 
-export function ContinueWatchingCard({ title, image, category, mentor }: ContinueWatchingProps) {
+export function ContinueWatchingCard({
+  title,
+  image,
+  category,
+  mentor,
+}: ContinueWatchingProps) {
   return (
-    <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+    <motion.div
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+    >
       <Card className="group overflow-hidden">
         <CardHeader className="relative  space-y-0 p-2">
           <div className="absolute right-2 pt-2 px-2 top-2 z-10 flex gap-2">
-            <Button variant="secondary" size="icon" className="h-8 w-8 backdrop-blur-sm">
+            <Button
+              variant="secondary"
+              size="icon"
+              className="h-8 w-8 backdrop-blur-sm"
+            >
               <Heart className="h-4 w-4" />
             </Button>
-            <Button variant="secondary" size="icon" className="h-8 w-8 backdrop-blur-sm">
+            <Button
+              variant="secondary"
+              size="icon"
+              className="h-8 w-8 backdrop-blur-sm"
+            >
               <MoreVertical className="h-4 w-4" />
             </Button>
           </div>
@@ -40,7 +60,9 @@ export function ContinueWatchingCard({ title, image, category, mentor }: Continu
         </CardHeader>
         <CardContent className="p-4">
           <div className="mb-2 flex items-center gap-2">
-            <div className="rounded bg-[#7C5CFC]/10 px-2 py-1 text-xs font-medium text-[#7C5CFC]">{category}</div>
+            <div className="rounded bg-[#7C5CFC]/10 px-2 py-1 text-xs font-medium text-[#7C5CFC]">
+              {category}
+            </div>
           </div>
           <h3 className="line-clamp-1 text-sm font-semibold">{title}</h3>
           <div className="mt-4 flex items-center gap-2">

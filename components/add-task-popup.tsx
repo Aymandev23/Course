@@ -1,8 +1,8 @@
 "use client"
 
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { X } from "lucide-react"
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { X, Calendar } from 'lucide-react'
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -18,34 +18,34 @@ interface AddTaskPopupProps {
 }
 
 export function AddTaskPopup({ isOpen, onClose, onAddTask }: AddTaskPopupProps) {
-  const [title, setTitle] = useState("")
-  const [description, setDescription] = useState("")
+  const [title, setTitle] = useState('')
+  const [description, setDescription] = useState('')
   const [dueDate, setDueDate] = useState<Date | undefined>(undefined)
-  const [priority, setPriority] = useState("medium")
-  const [course, setCourse] = useState("")
+  const [priority, setPriority] = useState('medium')
+  const [course, setCourse] = useState('')
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     const newTask = {
       title,
       description,
-      dueDate: dueDate ? dueDate.toISOString().split("T")[0] : "",
-      status: "Not Started",
+      dueDate: dueDate ? dueDate.toISOString().split('T')[0] : '',
+      status: 'Not Started',
       priority,
       course,
       assignee: {
-        name: "Unassigned",
-        avatar: "/placeholder.svg",
-      },
+        name: 'Unassigned',
+        avatar: '/placeholder.svg'
+      }
     }
     onAddTask(newTask)
     onClose()
     // Reset form
-    setTitle("")
-    setDescription("")
+    setTitle('')
+    setDescription('')
     setDueDate(undefined)
-    setPriority("medium")
-    setCourse("")
+    setPriority('medium')
+    setCourse('')
   }
 
   return (
